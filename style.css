@@ -1,0 +1,461 @@
+/* 
+  Composicion:
+   - fonts
+   - header
+   - main
+   - footer
+   - animaciones
+   - media queries
+  Nombre de clases:
+   string-string : clase de bootstrap
+   string_string : clase propia
+*/
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans:wght@700&family=Roboto+Mono:wght@500&display=swap');
+*{
+  margin: 0px;
+  padding: 0px;
+}
+::-webkit-scrollbar {
+  width: 25px;
+}
+::-webkit-scrollbar-track {
+  background: #303136;
+  border-radius: 20px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(255, 56, 86);
+  border-radius: 20px;
+  width: 20px;
+}
+/* fonts generales*/
+li{ 
+  margin: 5px;
+  margin-bottom: 15px;
+  list-style: none;
+}
+.nav_linkk{
+  text-decoration: none;
+  color: #000;
+  font-family: 'Merriweather', serif;
+}
+.titulo{
+  text-align: center;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: bold;
+  margin-top: 30px; 
+}
+.titulo_card{
+  margin: 50px;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: bold;
+}
+.card_txt_primario{
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
+.card_txt_secundario{
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
+.footer_txt{
+  color: white;
+  font-family: 'Merriweather', serif;
+}
+/* --------------- header ---------------*/
+.header_card{
+  margin: 20px;
+  border-radius: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
+  background: #e0e0e0;
+  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+}
+.btn_propio{
+  width: 100%;
+  padding: 5px 0px;
+  border-radius: 10px;
+  border: 0;
+  background-color: rgb(255, 56, 86);
+  transition: all .3s ease;
+  box-shadow: rgb(201, 46, 70) 0px 10px 0px 0px;
+}
+/* ------------------------------------------------ */
+/* cambiar modo de pantalla : light-darck */
+.switch_pantalla{
+  position: relative;
+  width: var(--ancho-switch);
+  height: var(--alto-switch);
+}
+/* oculta valores predeterminado del checkbox */
+.switch_pantalla input{
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* --------------- main ---------------*/
+#grilla{
+  display: grid;
+  grid-template-areas: "aside1 article aside2";
+  grid-template-columns: 10% 80% 10%;
+}
+article{
+  grid-area: article;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.aside1{
+  grid-area: aside1;
+}
+.aside2{
+  grid-area: aside2;
+}
+aside a{
+  position: sticky;
+  top: 200px;
+  bottom: 200px;
+}
+aside a img{
+  width: 100%;
+  max-width: 100px;
+}
+.titulo_loader{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 50%;
+  border-radius: 8px;
+  background-color: #47a7ff44;
+}
+.loader div {
+  height: 100%;
+  width: 100%;
+  border-radius: 8px;
+  background-color:rgb(255, 71, 98);
+  animation: loading 5s linear;
+  transition: all;
+}
+/* card perfil */
+.flip_card {
+  background-color: transparent;
+  perspective: 1000px;
+  font-family: sans-serif;
+  border-radius: 30px;
+  background: linear-gradient(to right, rgb(254, 96, 61), rgb(255, 159, 124));
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 50px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 26px -18px inset;
+}
+.flip_card_cuerpo{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+.flip_card_front, .flip_card_back {
+  box-shadow: 0 8px 14px 0 rgba(0,0,0,0.2);
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border: 1px solid coral;
+  border-radius: 30px;
+}
+.flip_card_front {
+  background: linear-gradient(120deg, rgb(254, 96, 61) 60%, rgb(255, 159, 124) 88%, rgb(255, 104, 49) 40%, rgb(255, 56, 86) 48%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.flip_card_back {
+  background: linear-gradient(120deg, rgb(254, 96, 61) 30%, coral 88%, bisque 40%, rgb(255, 185, 160) 78%);
+  transform: rotateY(180deg);
+  padding: 0px 10px;
+}
+.img_perfil{
+  border: 5px solid rgb(0, 0, 0);
+  border-radius: 50%;
+}
+/* card funciones */
+.flip_card2{
+  background: linear-gradient(to left, #f7ba2b 0%, #ea5358 100%);
+  padding: 5px;
+  border-radius: 30px;
+  perspective: 1000px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 50px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 26px -18px inset;
+}
+.flip_card_front2 {
+  --color: #181818;
+  background: var(--color);
+  color: var(--color);
+  align-items: center;
+}
+.flip_card_front2 img{
+  margin-bottom: 10px;
+}
+.flip_card_front2, .flip_card_back2 {
+  box-shadow: 0 8px 14px 0 rgba(0,0,0,0.2);
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 30px;
+  padding: 0px 10px;
+}
+.flip_card_back2{
+  transform: rotateY(180deg);
+}
+.flip_card_back2 ul{
+  padding: 0px;
+  margin: 0px;
+}
+.flip_card_front2 h3{
+  margin: 20px;
+  color: white;
+}
+.flip_card_front2 h4, h3{
+  color: white;
+}
+.card_imagen{
+  border-radius: 30%;
+  padding: 10px;
+  box-shadow: 15px 15px 30px #f7ba2b, -15px -15px 30px #ea5358;
+}
+/* card informacion personal */
+.card_personal{
+  padding: 50px 5px;
+  background: #e0e0e0;
+  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+  border-radius: 15px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  transition: all 0.5s;
+}
+.card_personal:hover {
+  border: 1px solid black;
+  transform: scale(1.05);
+}
+/* card contacto */
+.card_contacto div{
+  justify-content: center;
+}
+.card_contacto div a{
+  margin-top: 20px;
+}
+.card_contacto a:hover {
+  transform: scale(0.95);
+  transition: all 0.3s;
+}
+
+/* footer */
+.footer{
+  margin-top: 100px;
+  margin-bottom: 40px;
+  border-radius: 20px;
+  padding: 20px;
+  background: #020202;
+  box-shadow: 20px 20px 60px #888888, -20px -20px 60px hsl(0, 0%, 60%);
+}
+
+/* animaciones */
+.btn_propio:hover {
+  box-shadow: rgb(201, 46, 70) 0px 7px 0px 0px;
+}
+.btn_propio:active {
+  background-color: rgb(255, 56, 86);
+  box-shadow: rgb(201, 46, 70) 0px 0px 0px 0px;
+  transform: translateY(5px);
+  transition: 200ms;
+}
+/* barra deslizante */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: black;
+  transition: 0.9s;
+  border-radius: 30px;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: var(--tamaño-icono);
+  width: var(--tamaño-icono);
+  border-radius: 20px;
+  left: var(--padding-switch);
+  top: 50%;
+  transform: translateY(-50%);
+  background: linear-gradient(40deg,#ff0080,#ff8c00 70%);
+  transition: 1.5s;
+}
+input:checked + .slider {
+  background-color: #3a3c42;
+}
+input:checked + .slider:before {
+  left: calc(100% - (var(--tamaño-icono) + var(--padding-switch)));
+  background: black;
+  box-shadow: inset -3px -2px 5px -2px #8983f7, inset -10px -4px 0 0 #a3dafb;
+}
+/* keyframe de loader */
+@keyframes loading {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+/* card profesional y card herramientas hover */
+.flip_card:hover .flip_card_cuerpo {
+  transform: rotateY(180deg);
+}
+/* card personal hover */
+.flip_card2:hover .flip_card_cuerpo {
+  transform: rotateY(180deg);
+}
+/*icons de footer */
+.animate__animated.animate__headShake {
+  animation-iteration-count: infinite;
+  --animate-duration: 10s;
+}
+
+/* media queries*/
+@media screen and (max-width: 576px)
+{
+  .nav_linkk{
+    font-size: 3vw;
+  }
+  .titulo{
+    font-size: 2rem;
+  }
+  .loader{
+    max-width: 170px;
+    height: 0.5em;
+  }
+  .switch_pantalla{
+    --ancho-switch: 4.5em;
+    --alto-switch: 1.5em;
+    --tamaño-icono: 1em;
+    --padding-switch: 0.4em;
+  }
+  .titulo_card{
+    font-size: 1.5rem;
+  }
+  .card_txt_primario{
+    font-size: 1.5rem;
+  }
+  .card_txt_secundario{
+    font-size: 1rem;
+  }
+  .card_personal .nav_linkk{
+    font-size: 0.7rem;
+  }
+  .footer_txt{
+    font-size: 0.7rem;
+  }
+  .flip_card {
+    height: 300px;
+  }
+  .flip_card2{
+    height: 500px;
+  }
+  .card_imagen{
+    max-height:200px;
+  }
+}
+@media screen and (min-width: 577px) and (max-width: 991px)
+{
+  .nav_linkk{
+    font-size: 1rem;
+  }
+  .titulo{
+    font-size: 3rem;
+  }
+  .loader{
+    max-width: 250px;
+    height: 0.7em;
+  }
+  .switch_pantalla{
+    --ancho-switch: 5.5em;
+    --alto-switch: 1.7em;
+    --tamaño-icono: 1.2em;
+    --padding-switch: 0.4em;
+  }
+  .titulo_card{
+    font-size: 2rem;
+  }
+  .card_txt_primario{
+    font-size: 2em;
+  }
+  .card_txt_secundario{
+    font-size: 1.5rem;
+  }
+  .footer_txt{
+    font-size: 1.3rem;
+  }
+  .flip_card {
+    height: 400px;
+  }
+  .flip_card2{
+    height: 700px;
+  }
+}
+@media screen and (min-width: 992px)
+{
+  .nav_linkk{
+    font-size: 1.5rem;
+  }
+  .titulo{
+    font-size: 4rem;
+  }
+  .loader{
+    max-width: 450px;
+    height: 1em;
+  }
+  .switch_pantalla{
+    --ancho-switch: 10.5em;
+    --alto-switch: 3em;
+    --tamaño-icono: 2.4em;
+    --padding-switch: 1em;
+  }
+  .titulo_card{
+    font-size: 3rem;
+  }
+  .card_txt_primario{
+    font-size: 2.5rem;
+  }
+  .card_txt_secundario{
+    font-size: 2rem;
+  }
+  .footer_txt{
+    font-size: 2rem;
+  }
+  .flip_card {
+    height: 500px;
+  }
+  .flip_card2{
+    height: 800px;
+  }
+}
